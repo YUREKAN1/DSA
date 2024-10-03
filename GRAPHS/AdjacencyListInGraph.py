@@ -18,29 +18,6 @@ class Graph:
         for vertex in self.graph:
             print(f"{vertex} ->{self.graph[vertex]}")
 
-    def dfs(self,vertex,visited):
-        if vertex not in visited:
-            print(vertex,end=' ')
-            visited[vertex]=True
-            for v in self.graph[vertex]:
-                self.dfs(v,visited)
-  
-
-    def bfs(self,startvertex):
-        queue=[startvertex]
-        visited={startvertex:True}
-        while queue:
-            currentvertex=queue.pop(0)
-            print(currentvertex,end=" ")
-            for i in self.graph[currentvertex]:
-                if i not in visited:
-                    queue.append(i)
-                    visited[i]=True
-        
-
-
-
-    
 
 A=Graph()
 A.addEdge('A','B')
@@ -53,6 +30,3 @@ A.addEdge('E','F')
 A.addEdge('D','B')
 
 A.displaygraph()
-A.dfs('A',{})
-print()
-A.bfs('A')
